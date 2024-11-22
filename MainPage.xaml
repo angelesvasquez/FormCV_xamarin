@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FormCV_xam.MainPage"
+             BackgroundColor="#3B4C63">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Estilos comunes -->
+            <Style x:Key="InputFieldStyle" TargetType="Entry">
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="BackgroundColor" Value="#3B4C63"/>
+                <Setter Property="PlaceholderColor" Value="white"/>
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#003366"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Margin" Value="20"/>
+                <Setter Property="Padding" Value="10"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Padding="15">
+            <!-- Información Personal -->
+            <Label Text="INFORMACIÓN PERSONAL" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Entry x:Name="entradaNombre" Placeholder="Nombre" Style="{StaticResource InputFieldStyle}" />
+            <Entry x:Name="entradaEdad" Placeholder="Edad" Keyboard="Numeric" Style="{StaticResource InputFieldStyle}" />
+            <Entry x:Name="entradaCiudad" Placeholder="Ciudad" Style="{StaticResource InputFieldStyle}" />
+            <Entry x:Name="entradaCorreo" Placeholder="Correo" Keyboard="Email" Style="{StaticResource InputFieldStyle}" />
+            <Entry x:Name="entradaTelefono" Placeholder="Teléfono" Keyboard="Telephone" Style="{StaticResource InputFieldStyle}" />
+
+            <!-- Experiencia Laboral -->
+            <Label Text="EXPERIENCIA LABORAL" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Entry x:Name="entradaPuesto" Placeholder="Puesto" Style="{StaticResource InputFieldStyle}" />
+            <Entry x:Name="entradaEmpresa" Placeholder="Empresa" Style="{StaticResource InputFieldStyle}" />
+            <Entry x:Name="entradaFechaInicio" Placeholder="Inicio (YYYY)" Keyboard="Numeric" Style="{StaticResource InputFieldStyle}" />
+            <Entry x:Name="entradaFechaFin" Placeholder="Fin (YYYY)" Keyboard="Numeric" Style="{StaticResource InputFieldStyle}" />
+            <Entry x:Name="entradaResponsabilidades" Placeholder="Responsabilidades" Style="{StaticResource InputFieldStyle}" />
+
+            <!-- Educación -->
+            <Label Text="EDUCACIÓN" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Entry x:Name="entradaTitulo" Placeholder="Título" Style="{StaticResource InputFieldStyle}" />
+            <Entry x:Name="entradaUniversidad" Placeholder="Universidad" Style="{StaticResource InputFieldStyle}" />
+            <Entry x:Name="entradaAñoGraduacion" Placeholder="Año de Graduación" Keyboard="Numeric" Style="{StaticResource InputFieldStyle}" />
+
+            <!-- Botón de Generar CV -->
+            <Button Text="Generar CV" Style="{StaticResource ButtonStyle}" Clicked="OnGenerarCvClicked"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

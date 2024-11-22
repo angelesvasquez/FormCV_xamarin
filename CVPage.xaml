@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FormCV_xam.CVPage"
+             BackgroundColor="#F4F6F9">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Título principal -->
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="28"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="#003366"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="0,0,0,15"/>
+            </Style>
+
+            <!-- Títulos de secciones -->
+            <Style x:Key="SectionTitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="22"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="#003366"/>
+                <Setter Property="Margin" Value="10,15,10,5"/>
+            </Style>
+
+            <!-- Texto del contenido -->
+            <Style x:Key="ContentTextStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="TextColor" Value="#333333"/>
+                <Setter Property="Margin" Value="10,5"/>
+            </Style>
+
+            <!-- Estilo para los bordes de las secciones -->
+            <Style x:Key="BoxViewStyle" TargetType="BoxView">
+                <Setter Property="HeightRequest" Value="1"/>
+                <Setter Property="BackgroundColor" Value="#003366"/>
+                <Setter Property="Margin" Value="0,10,0,10"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Padding="15">
+            <!-- Título principal -->
+            <Label Text="{Binding Nombre}" Style="{StaticResource TitleStyle}" />
+            <BoxView Style="{StaticResource BoxViewStyle}" />
+            <Label Text="INFORMACIÓN PERSONAL" Style="{StaticResource SectionTitleStyle}" />
+            <Label Text="{Binding Edad}" Style="{StaticResource ContentTextStyle}" />
+            <Label Text="{Binding Ciudad}" Style="{StaticResource ContentTextStyle}" />
+            <Label Text="{Binding Correo}" Style="{StaticResource ContentTextStyle}" />
+            <Label Text="{Binding Telefono}" Style="{StaticResource ContentTextStyle}" />
+
+            <!-- Sección de experiencia laboral -->
+            <BoxView Style="{StaticResource BoxViewStyle}" />
+            <Label Text="EXPERIENCIA LABORAL" Style="{StaticResource SectionTitleStyle}" />
+            <Label Text="{Binding Puesto}" Style="{StaticResource ContentTextStyle}" />
+            <Label Text="{Binding Empresa}" Style="{StaticResource ContentTextStyle}" />
+            <Label Text="{Binding FechaInicio}" Style="{StaticResource ContentTextStyle}" />
+            <Label Text="{Binding FechaFin}" Style="{StaticResource ContentTextStyle}" />
+            <Label Text="{Binding Responsabilidades}" Style="{StaticResource ContentTextStyle}" />
+
+            <!-- Sección de educación -->
+            <BoxView Style="{StaticResource BoxViewStyle}" />
+            <Label Text="EDUCACIÓN" Style="{StaticResource SectionTitleStyle}" />
+            <Label Text="{Binding Titulo}" Style="{StaticResource ContentTextStyle}" />
+            <Label Text="{Binding Universidad}" Style="{StaticResource ContentTextStyle}" />
+            <Label Text="{Binding AñoGraduacion}" Style="{StaticResource ContentTextStyle}" />
+            <BoxView Style="{StaticResource BoxViewStyle}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
